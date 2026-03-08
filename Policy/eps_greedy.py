@@ -1,9 +1,8 @@
 import numpy as np
-import random
 
 def epsilon_greedy(q_val,eps):
-    if(random.random()<eps):
-        a = random.randint(0,1)
+    if(np.random.random()<eps):
+        a = np.random.randint(0,2)
     else:
         a = np.argmax(q_val)
 

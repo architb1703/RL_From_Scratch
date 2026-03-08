@@ -1,5 +1,3 @@
-import random
-import stat
 import numpy as np
 
 class Easy21:
@@ -9,8 +7,8 @@ class Easy21:
         self.reset()
 
     def draw_card(self):
-        next_card = random.randint(1,10)
-        next_color = -1 if random.random() < 0.33 else 1     # -1-red, 1-black
+        next_card = np.random.randint(1,11)
+        next_color = -1 if np.random.random() < 0.33 else 1     # -1-red, 1-black
         return(next_card*next_color)
 
     def step(self, action):
@@ -42,8 +40,8 @@ class Easy21:
         return(self.state, reward, self.terminated)
             
     def reset(self):
-        dealer_card = random.randint(1,10)
-        player_card = random.randint(1,10)
+        dealer_card = np.random.randint(1,11)
+        player_card = np.random.randint(1,11)
         self.state = [dealer_card, player_card]
         self.terminated = False
         return [self.state, self.terminated]
